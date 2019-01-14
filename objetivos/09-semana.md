@@ -47,6 +47,9 @@ Para crear sistemas cloud hay que tener en cuenta las siguientes consideraciones
 * Realizar siempre conexiones a través de SSH cifrado con clave.
 * No almacenar nunca la clave privada en el sistema.
 
+## Instalarse los diferentes clientes de líneas de órdenes de los sistemas en la nube a los que se tenga acceso
+Se ha instalado la interfaz de línea de comandos de Azure para la realización de las prácticas. La captura de pantalla que lo prueba se puede ver [aquí](https://github.com/fpeiro/CC-ejercicios/blob/master/images/azurecli.png).
+
 ## En la sesión del jueves, comentar los fallos más habituales en el hito
 En clase expliqué los problemas que tenía con el almacenamiento de variables en Heroku y Azure que me impedía conectarme a la base
 de datos sin almacenar la contraseña.
