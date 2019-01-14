@@ -38,12 +38,16 @@ WORKDIR /data
 VOLUME /data
 COPY ejemplo.json .
 ```
-Este fichero básicamente crea un contenedor que empaqueta un archivo. Para poder ejecutar este `Dockerfile` antes hay que obtener su id:
+Este fichero básicamente crea un contenedor que empaqueta un archivo. Para lanzar este `Dockerfile` primero hay que crear el contenedor y luego ejecutarlo:
 ```shell
-sudo docker run -d -it --rm ruta/nombrefichero sh
+$ sudo docker build --tag=friendlyhello .
+$ sudo docker run -p 4000:80 friendlyhello
 ```
-`-d` indica que se va a ejecutar como _daemon_, es decir, que se ejecuta en segundo plano, y --rm porque tras ejecutarse se va a eliminar
-el docker creado.
+Mediante `--tag` se le puede asignar un nombre al contenedor. La etiqueta `-p` sirve para redirigir un puerto del contenedor a la máquina anfitriona. Tras haberlo ejecutado este estará disponible en el puerto 4000.
+
+## Análisis post-mortem del último hito
+En el último hito se ha creado una segunda máquina virtual donde almacenar la base de datos que utiliza el servicio. Esta se ha provisionado con un `Vagrantfile` distinto al de la primera máquina virtual y se ha realizado una red privada entre ellas para su
+conexión. Para más información se puede visitar [su página correspondiente](https://github.com/fpeiro/CC-proyecto/blob/gh-pages/hito5.md#entorno-multim%C3%A1quina).
 
 ## Alta en Docker Hub si no se ha hecho ya, así como instalación de las herramientas de Docker
 Se ha creado una cuenta en Docker Hub tal y como se muestra en
